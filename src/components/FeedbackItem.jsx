@@ -1,25 +1,15 @@
-import React from 'react'
-import { useState } from 'react'
+import Card from "../shared/Card";
+import {Fatimes} from 'react-icons/fa'
 
-function FeedbackItem() {
-    const [rating, setRating] = useState(7);
-    const handleClick = () =>  {
-        setRating( (prev) => {
-            return prev + 1;
-        })
-
-    }
+function FeedbackItem({ item }) {
   return (
-    <div>
-      <div className="card">
-        <div className="num-display">{rating}</div>
-        <div className="text-display">
-            This is an Example of Using States in React
-        </div>
-        <button onClick={handleClick}>Click</button>
-      </div>
-    </div>
-  )
+    <Card className="card">
+      <div className="num-display">{item.rating}</div>
+      <div className="text-display">{item.text}</div>
+      
+    </Card>
+    
+  );
 }
 
-export default FeedbackItem
+export default FeedbackItem;
